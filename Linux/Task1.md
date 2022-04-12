@@ -2,14 +2,19 @@
 
 sudo su
 
+
 ![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_06_04_2022_15_47_46.png "sudo su")
 
 2) Use the passwd command to change the password. Examine the basic  parameters of the command. What system file does it change *?
 
 ls -lt
+
+
 ![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_12_04_2022_01_50_45.png "ls -lt")
 
 /etc/shadow
+
+
 ![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_12_04_2022_01_51_28.png "/etc/shadow")
 
 
