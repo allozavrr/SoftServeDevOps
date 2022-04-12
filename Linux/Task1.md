@@ -7,18 +7,28 @@ sudo su
 2) Use the passwd command to change the password. Examine the basic  parameters of the command. What system file does it change *?
 
 ls -lt
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_12_04_2022_01_50_45.png "ls -lt")
+
 /etc/shadow
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_12_04_2022_01_51_28.png "/etc/shadow")
+
 
 3) Determine the users registered in the system, as well as what commands they  execute. What additional information can be gleaned from the command  execution? 
 who
 w
 
+
 4) Change personal information about yourself. 
 chfn
 
 5) Become familiar with the Linux help system and the man and info commands.  Get help on the previously discussed commands, define and describe any two  keys for these commands. Give examples. 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_06_04_2022_15_54_44.png "man")
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_06_04_2022_15_54_25.png "man")
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_06_04_2022_15_53_31.png "man man")
+
 
 6) Explore the more and less commands using the help system. View the contents  of files .bash* using commands. 
+
 
 7) * Describe in plans that you are working on laboratory work 1. Tip: You should  read the documentation for the finger command. 
 su
@@ -26,9 +36,15 @@ chmod 755 .plan
 chmod .
 finger -l
 echo "I'm working on labaratory work 1" > ~/.plan
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_11_04_2022_14_41_35.png "echo")
+
+
 
 8) * List the contents of the home directory using the ls command, define its files  and directories. Hint: Use the help system to familiarize yourself with the ls  command. 
-ls -la
+ls -lh
+d is the directory
+- is file 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_12_04_2022_02_17_09.png "ls -lh")
 
 Task1.Part2 
 1) Examine the tree command. Master the technique of applying a template, for  example, display all files that contain a character c, or files that contain a  specific sequence of characters. List subdirectories of the root directory up to  and including the second nesting level. 
