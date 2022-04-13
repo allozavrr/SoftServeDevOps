@@ -76,5 +76,59 @@ top command is used to show the Linux processes. It provides a dynamic real-time
 
 top -U username
 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_14_04_2022_00_35_16.png "top -U")
+
+12. What interactive commands can be used to control the top command? Give a couple of examples.
+
+-d [secs.tenths]	Delay time interval	Prompts you to specify the delay before updating the screen, overriding the default value. The value is in seconds. The command accepts fractional seconds but doesn't accept negative numbers.
+-e [k | m | g | t | p]	Toggle task memory scaling	Allows you to change top task area memory scaling. The available scaling options are k (kibibytes), m (mebibytes), g (gibibytes), t (tebibytes), p (pebibytes).
+
+
+13. Sort the contents of the processes window using various parameters (for example, the amount of processor time taken up, etc.)
+
+To sort all Linux running processes by Process ID, press M and T keys.
+
+To sort all Linux running processes by running time, press M and T keys.
+Press ‘c‘ option in running top command will display the absolute path of the running process.
+By default screen refresh interval is set to 3.0 seconds, the same can be changed by pressing the ‘d‘ option in running the top command to set desired interval time.
+To sort all running processes by CPU utilization, simply press Shift+P key.
+To list the load information of your CPU cores, simply press 1 to list the CPU core details.
+Press 'i' to get the list of idle/sleeping processes.
+Press the ‘h‘ option to obtain the top command help.
+The output of the top command keeps refreshing until you press ‘q‘. With the below command, it will automatically exit after 10 repetitions.
+You can kill a process after finding the PID of the process by pressing the ‘k‘ option in running the top command without closing the top window as shown below signal 15 for SIGTERM 9 for SIGKILL.
+
+14. Concept of priority, what commands are used to set priority?
+
+change the default priority that was assigned to the process when it was started you can do using the nice and renice commands 
+
+nice - to start a process with an adjusted priority 
+
+renice - to change the priority for a currently active process 
+
+Alternatively, you can use the r command from the top utility to change the priority of a currently running process 
+
+When using nice or renice to adjust process priority, you can select from values ranging from 20 to 19 The default niceness of a process is set to 0 (which results in the priority value of 20 
+By applying a negative niceness, you can increase the priority 
+
+15. Can I change the priority of a process using the top command? If so, how?
+
+To renice a running process from top, type r and prompt for the PID of the process you want to renice . After entering the PID, you are prompted for the nice value you want to use. Enter a positive value to increase process priority or a negative value to decrease process priority.
+
+16. Examine the kill command. How to send with the kill command process control signal? Give an example of commonly used signals.
+kill command in Linux (located in /bin/kill), is a built-in command which is used to terminate processes manually. kill command sends a signal to a process which terminates the process.
+
+Signals can be specified in three ways:
+By number (e.g. -5)
+With SIG prefix (e.g. -SIGkill)
+Without SIG prefix (e.g. -kill)
+
+A PID of -1 is very special as it indicates all the processes except kill and init, which is the parent process of all processes on the system.
+
+kill pid
+
+17. Commands jobs, fg, bg, nohup. What are they for? Use the sleep, yes command to demonstrate the process control mechanism with fg, bg.
+
+
 
 
