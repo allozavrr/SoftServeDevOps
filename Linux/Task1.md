@@ -54,16 +54,34 @@ d is the directory
 Task1.Part2 
 1) Examine the tree command. Master the technique of applying a template, for  example, display all files that contain a character c, or files that contain a  specific sequence of characters. List subdirectories of the root directory up to  and including the second nesting level. 
 
+sudo apt-get install tree
+tree -df
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_14_38_01.png "tree")
+
+
 2) What command can be used to determine the type of file (for example, text or  binary)? Give an example. 
 
-find fylename -type
+file
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_14_42_55.png "file")
+
 
 3) Master the skills of navigating the file system using relative and absolute paths.  How can you go back to your home directory from anywhere in the filesystem?
- cd /
+
+An absolute path is defined as specifying the location of a file or directory from the root directory(/). In other words,we can say that an absolute path is a complete path from start of actual file system from / directory.
+
+Relative path is defined as the path related to the present working directly(pwd). It starts at your current directory and never starts with a / .
+
+Back to your home directory from anywhere - cd ~
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_14_50_55.png "path")
  
 4) Become familiar with the various options for the ls command. Give examples  of listing directories using different keys. Explain the information displayed on  the terminal using the -l and -a switches. 
 
 ls -la
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_14_53_36.png "ls")
 
 5) Perform the following sequence of operations: 
 - create a subdirectory in the home directory; 
