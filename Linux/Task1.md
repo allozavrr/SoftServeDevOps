@@ -86,24 +86,15 @@ ls -la
 5) Perform the following sequence of operations: 
 - create a subdirectory in the home directory; 
 
-cd Home
-mkdir temp
-
 - in this subdirectory create a file containing information about directories  located in the root directory (using I/O redirection operations); 
-cd temp
-ls -la / > test.out 
 
 - view the created file; 
-cat test.out
 
 - copy the created file to your home directory using relative and absolute  addressing.
- cp Home
  
-
 - delete the previously created subdirectory with the file requesting removal; - delete the file copied to the home directory. 
-rmdir
-cd
-rm
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_10_26.png "create")
 
 6) Perform the following sequence of operations: 
 - create a subdirectory test in the home directory;
@@ -120,36 +111,78 @@ updatedb
 locate squid
 locate traceroute
 
+sudo apt update
+sudo apt install mlocate
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_19_55.png "locate")
+
 8) Determine which partitions are mounted in the system, as well as the types of  these partitions.
 
-findmnt /home
+findmnt 
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_22_21.png "findmnt")
 
 9) Count the number of lines containing a given sequence of characters in a given  file. 
 
 wc /proc/cpuinfo 
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_24_14.png "wc")
 
 10) Using the find command, find all files in the /etc directory containing the  host character sequence. 
 
 find /etc -name 'host*' -printf0 | wc -l --files0-from=-
 
 11) List all objects in /etc that contain the ss character sequence. How can I  duplicate a similar command using a bunch of grep?
-find /etc -name 'ss*' -printf0 | wc -l --files0-from=-
-grep "ss*" /etc | wc -l
+sudo find /etc -name 'ss*' | wc -l --files0-from=-
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_28_57.png "wc")
  
-12) 
+12) Organize a screen-by-screen print of the contents of the /etc directory. Hint:
+You must use stream redirection operations.
 
+sudo ls /etc > temp.txt
+cat temp.txt
 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_36_32.png ">")
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_35_12.png "result")
 
+13) What are the types of devices and how to determine the type of device? Give examples.
+Linux recognizes two different kinds of device: random-access block devices (such as disks), and character devices (such as tapes and serial lines) , some of which may be serial, and some random-access.
 
+All devices are represented by files called special files that are located in/dev directory. Thus, device files and other files are named and accessed in the same way. A 'regular file' is just an ordinary data file in the disk. A 'block special file' represents a device with characteristics similar to a disk (data transfer in terms of blocks). A 'character special file' represents a device with characteristics similar to a keyboard (data transfer is by stream of bits in sequential order).
 
+ls -la /dev
 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_43_51.png "dev")
 
+14) How to determine the type of file in the system, what types of files are there?
 
-Symbolic links. A file in Linux can have multiple names or "hard links". 
-A hard link is just another name for the original file. It is written in the inode of the source file. Once a hard link is created, it is impossible to distinguish between where the original file name is and where the link is. If you delete one of these files (more precisely one of these names), then the file is still saved on disk (as long as it has at least one link name). 
-Example: 
-[globus@fedora lab1]$ ln lab1.txt link_on_lab1 
-There is another type of links in Linux, so called symbolic links. These links can also be considered as additional filenames, but at the same time they are represented as separate files - files such as symbolic links. Unlike hard links, symbolic links can point to files located in a different file system, such as a mountable medium, or even on another computer. If the original file is deleted, the symbolic link is not removed, but is useless. 
-To create a symbolic link, use the ln command with the additional -s option:  
-ln -s name_of_file_or_directory_link_name
+There are types of files are available in Linux with 3 Major categories. 
 
+Regular File
+Directory File
+Special Files (There are five types of files in the special category)
+Link File
+Character Device File
+Socket File
+Named Pipe File
+Block File
+
+“-” refers to the identification symbol for the regular file
+“d” refers to the directory
+“l” refers to the link
+
+Use ls command 
+
+15) List the first 5 directory files that were recently accessed in the /etc directory.
+
+ls -lht | head -6
+
+-l outputs in a list format
+
+-h makes output human readable (i.e. file sizes appear in kb, mb, etc.)
+
+-t sorts output by placing most recently modified file first
+
+head -6 will show 5 files because ls prints the block size in the first line of output.
+
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_15_51_26.png "6")
