@@ -34,4 +34,19 @@ sudo usermod -l newUsername oldUsername
 7) What is skell_dir? What is its structure?
 Directory /etc/skel/ (skel is derived from the “skeleton”) is used to initiate home directory when a user is first created. 
 
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_16_33_44.png "skell_dir")
 
+8) How to remove a user from the system (including his mailbox)?
+userdel -r username
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_16_38_22.png "userdel")
+
+9) What commands and keys should be used to lock and unlock a user account?
+passwd -l username
+passwd -u username
+![alt text](https://github.com/allozavrr/SoftServeDevOps/blob/main/Linux/Screens/VirtualBox_Ubuntu_13_04_2022_16_40_00.png "lock")
+
+10) How to remove a user's password and provide him with a password-free login for subsequent password change?
+passwd -e username
+chage -l username
+
+11) 
